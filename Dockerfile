@@ -8,6 +8,7 @@ COPY . .
 RUN npm run build
 
 FROM nginx
+EXPOSE 80
 # PULLS IMAGE FROM PREVIOUS STAGE. HERE IT IS MARKED AS BUILDER.
 COPY --from=builder /app/build /usr/share/nginx/html
 
